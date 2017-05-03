@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-//Components//
-import { ListComponent } from '../components/login-component';
-import { TitleComponent } from '../components/title-component';
+//Components
+import { ListComponent } from '../components/login.component';
+
 
 
 @IonicPage()
@@ -15,7 +15,6 @@ import { TitleComponent } from '../components/title-component';
 
 
 export class Drills {
-	public pageTitle = 'Drills';
   constructor(
   	public navCtrl: NavController,
   	public navParams: NavParams) {}

@@ -25,7 +25,7 @@ export class ListComponent {
         this.af.auth.subscribe(auth => {
           if ( auth ) {
             this.uid = auth.uid;
-            this.drills = af.database.list('/drills/'+this.uid);
+            this.drills = af.database.list(this.uid+'/drills/');
           }
         });
     }
