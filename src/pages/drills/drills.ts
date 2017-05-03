@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-//Components
+//Components//
 import { ListComponent } from '../components/login-component';
 import { TitleComponent } from '../components/title-component';
 
