@@ -1,509 +1,331 @@
 [
   {
-    "_id": "58f2dbff2671b45f50abe8c7",
+    "_id": "59094a174f252b7e43d4ba63",
     "index": 0,
+    "guid": "3e77d8e5-55e0-4c38-8e9f-b70850e9fb4e",
+    "position": "defensive midfielder",
     "isActive": true,
-    "balance": "$1,950.88",
-    "picture": "http://placehold.it/32x32",
-    "age": 30,
-    "name": "Waters Cotton",
-    "email": "waterscotton@decratex.com",
-    "phone": "+1 (857) 492-3414",
-    "address": "693 Dare Court, Fruitdale, Maine, 6648",
-    "about": "Duis commodo voluptate duis qui officia anim aute. Aliquip deserunt commodo occaecat exercitation non cupidatat ut pariatur exercitation. Voluptate eu commodo proident aliquip nulla voluptate fugiat enim Lorem consequat. Quis labore aute occaecat mollit qui duis laboris deserunt excepteur dolor nisi Lorem. Consequat pariatur ullamco mollit aliquip dolore dolore ipsum culpa velit eu laborum magna deserunt. Amet consectetur sit culpa aliquip sit incididunt.\r\n",
-    "registered": "2015-11-21T01:51:40 +06:00",
-    "tags": [
-      "eiusmod",
-      "proident",
-      "ex",
-      "labore",
-      "occaecat",
-      "enim",
-      "ipsum"
-    ],
-    "friends": [
-      {
-        "id": 0,
-        "name": "Floyd Whitney"
-      },
-      {
-        "id": 1,
-        "name": "Penny Kramer"
-      },
-      {
-        "id": 2,
-        "name": "Mcpherson Brown"
-      }
-    ],
-    "greeting": "Hello, Waters Cotton! You have 4 unread messages.",
-    "favoriteFruit": "strawberry"
-  },
-  {
-    "_id": "58f2dbff3792ca4d850c994c",
-    "index": 1,
-    "isActive": false,
-    "balance": "$1,353.25",
-    "picture": "http://placehold.it/32x32",
-    "age": 31,
-    "name": "Lourdes Todd",
-    "email": "lourdestodd@decratex.com",
-    "phone": "+1 (823) 542-2998",
-    "address": "270 Just Court, Venice, Nevada, 9981",
-    "about": "Occaecat minim aliquip aliquip fugiat eu magna fugiat ut pariatur veniam consectetur proident. Minim Lorem minim aliquip occaecat dolor deserunt nisi laborum in. Consectetur laborum aliqua non incididunt est voluptate aute proident ut fugiat. Occaecat aliqua velit proident eiusmod anim Lorem eu nisi esse exercitation proident eiusmod. Amet mollit duis aute eu quis enim eu Lorem.\r\n",
-    "registered": "2015-04-20T01:54:17 +05:00",
-    "tags": [
-      "duis",
-      "amet",
+    "rank": 22,
+    "picture": "http://lorempixel.com/64/64/people/",
+    "age": 18,
+    "name": "Paulette Roberson",
+    "email": "pauletteroberson@telequiet.com",
+    "phone": "+1 (969) 410-2116",
+    "address": "819 Dunne Place, Roulette, Montana, 4607",
+    "about": "Irure amet ullamco eiusmod laboris nisi eiusmod magna velit dolore. Sunt proident pariatur adipisicing consequat sunt Lorem ullamco anim nisi officia magna dolore fugiat voluptate. Velit magna laboris voluptate dolore aute est sit.\r\n",
+    "badges": [
+      "aute",
+      "mollit",
       "tempor",
-      "excepteur",
-      "consequat",
-      "anim",
-      "occaecat"
+      "in",
+      "culpa",
+      "esse",
+      "dolore"
     ],
-    "friends": [
+    "stats": [
       {
-        "id": 0,
-        "name": "Horne Carr"
+        "type": "assists",
+        "percentage": 72,
+        "amount": 20
       },
       {
-        "id": 1,
-        "name": "Carolyn Chan"
+        "type": "saves",
+        "percentage": 55,
+        "amount": 10
       },
       {
-        "id": 2,
-        "name": "Hughes Hart"
+        "type": "saves",
+        "percentage": 25,
+        "amount": 14
+      },
+      {
+        "type": "assists",
+        "percentage": 56,
+        "amount": 8
       }
     ],
-    "greeting": "Hello, Lourdes Todd! You have 8 unread messages.",
-    "favoriteFruit": "apple"
+    "greeting": "Hello, Paulette Roberson! You have 8 unread messages."
   },
   {
-    "_id": "58f2dbff9a89a7ec2711c6fa",
-    "index": 2,
-    "isActive": true,
-    "balance": "$1,712.40",
-    "picture": "http://placehold.it/32x32",
-    "age": 23,
-    "name": "Richard Guzman",
-    "email": "richardguzman@decratex.com",
-    "phone": "+1 (940) 493-2378",
-    "address": "477 Utica Avenue, Boonville, Federated States Of Micronesia, 9363",
-    "about": "Fugiat proident minim amet id magna labore eiusmod eu labore aute. Do nostrud nisi voluptate ex cupidatat in sit laborum cupidatat deserunt deserunt occaecat do. Mollit culpa esse fugiat nulla duis ex eiusmod nisi dolor do. Sint sint eiusmod sit commodo.\r\n",
-    "registered": "2014-07-29T08:07:57 +05:00",
-    "tags": [
-      "duis",
+    "_id": "59094a176770a4283a668b1f",
+    "index": 1,
+    "guid": "9cd7137d-019d-41ba-91a8-3781d14d1498",
+    "position": "defensive midfielder click to hear",
+    "isActive": false,
+    "rank": 1,
+    "picture": "http://lorempixel.com/64/64/people/",
+    "age": 22,
+    "name": "Mcgowan Roth",
+    "email": "mcgowanroth@telequiet.com",
+    "phone": "+1 (857) 471-3058",
+    "address": "252 Bushwick Court, Outlook, Iowa, 287",
+    "about": "Nisi velit nisi ea id excepteur sunt eu tempor eiusmod laboris. Dolor culpa ullamco est voluptate aliquip eu cupidatat excepteur et pariatur Lorem pariatur quis. Proident aute velit id occaecat.\r\n",
+    "badges": [
+      "quis",
       "fugiat",
-      "ad",
-      "ad",
-      "qui",
-      "proident",
+      "aliquip",
+      "esse",
+      "id",
+      "laborum",
+      "in"
+    ],
+    "stats": [
+      {
+        "type": "saves",
+        "percentage": 19,
+        "amount": 18
+      },
+      {
+        "type": "assists",
+        "percentage": 42,
+        "amount": 15
+      },
+      {
+        "type": "assists",
+        "percentage": 44,
+        "amount": 11
+      },
+      {
+        "type": "errors",
+        "percentage": 27,
+        "amount": 5
+      }
+    ],
+    "greeting": "Hello, Mcgowan Roth! You have 6 unread messages."
+  },
+  {
+    "_id": "59094a1784264e0bcbfc66bd",
+    "index": 2,
+    "guid": "a95889d0-e0f4-4571-8db3-8750471eea69",
+    "position": "defensive midfielder",
+    "isActive": true,
+    "rank": 20,
+    "picture": "http://lorempixel.com/64/64/people/",
+    "age": 25,
+    "name": "Murray Alexander",
+    "email": "murrayalexander@telequiet.com",
+    "phone": "+1 (925) 420-3229",
+    "address": "644 Pineapple Street, Vowinckel, Federated States Of Micronesia, 6595",
+    "about": "Adipisicing laborum ad pariatur non mollit dolor. Deserunt aliquip sunt amet adipisicing incididunt dolore quis. Do officia aliquip pariatur laboris in minim nisi ex ipsum exercitation in nisi.\r\n",
+    "badges": [
+      "consequat",
+      "reprehenderit",
+      "sint",
+      "laborum",
+      "aliqua",
+      "id",
+      "labore"
+    ],
+    "stats": [
+      {
+        "type": "goals",
+        "percentage": 50,
+        "amount": 5
+      },
+      {
+        "type": "errors",
+        "percentage": 30,
+        "amount": 13
+      },
+      {
+        "type": "errors",
+        "percentage": 62,
+        "amount": 20
+      },
+      {
+        "type": "assists",
+        "percentage": 61,
+        "amount": 17
+      }
+    ],
+    "greeting": "Hello, Murray Alexander! You have 7 unread messages."
+  },
+  {
+    "_id": "59094a177f8170bbc148f7ee",
+    "index": 3,
+    "guid": "63c8fe87-2c3c-42dc-8a9e-4ec64d7b84a3",
+    "position": "goalkeeper",
+    "isActive": false,
+    "rank": 6,
+    "picture": "http://lorempixel.com/64/64/people/",
+    "age": 22,
+    "name": "Rochelle Calhoun",
+    "email": "rochellecalhoun@telequiet.com",
+    "phone": "+1 (871) 475-3600",
+    "address": "589 Pierrepont Street, Mayfair, American Samoa, 7003",
+    "about": "Est commodo pariatur id ut esse. Quis irure dolor eiusmod amet consequat excepteur excepteur amet pariatur amet fugiat enim reprehenderit. Do irure pariatur adipisicing magna exercitation do ullamco reprehenderit commodo pariatur. Tempor dolor est ad amet quis. Ipsum duis quis nisi amet labore ad occaecat proident aliquip.\r\n",
+    "badges": [
+      "excepteur",
+      "nostrud",
+      "elit",
+      "eu",
+      "magna",
+      "exercitation",
       "elit"
     ],
-    "friends": [
+    "stats": [
       {
-        "id": 0,
-        "name": "Minnie Dorsey"
+        "type": "saves",
+        "percentage": 79,
+        "amount": 10
       },
       {
-        "id": 1,
-        "name": "Rosemary Chang"
+        "type": "saves",
+        "percentage": 44,
+        "amount": 14
       },
       {
-        "id": 2,
-        "name": "Kent Wilcox"
+        "type": "goals",
+        "percentage": 65,
+        "amount": 15
+      },
+      {
+        "type": "errors",
+        "percentage": 37,
+        "amount": 5
       }
     ],
-    "greeting": "Hello, Richard Guzman! You have 9 unread messages.",
-    "favoriteFruit": "strawberry"
+    "greeting": "Hello, Rochelle Calhoun! You have 4 unread messages."
   },
   {
-    "_id": "58f2dbff9dc1d276315a7c23",
-    "index": 3,
-    "isActive": false,
-    "balance": "$1,804.41",
-    "picture": "http://placehold.it/32x32",
-    "age": 31,
-    "name": "Mercedes Perez",
-    "email": "mercedesperez@decratex.com",
-    "phone": "+1 (985) 433-2371",
-    "address": "961 Rutledge Street, Nanafalia, Louisiana, 609",
-    "about": "Minim cupidatat ad voluptate occaecat elit est cillum. Incididunt labore enim ea officia exercitation ex est voluptate nisi nostrud id dolore. Incididunt commodo reprehenderit do labore minim officia culpa culpa fugiat. Anim laborum laboris ut aliquip est in ea id excepteur non do veniam. Id laborum consequat ea do non incididunt id ex.\r\n",
-    "registered": "2017-03-06T02:14:40 +06:00",
-    "tags": [
-      "excepteur",
-      "consequat",
-      "ex",
-      "dolore",
-      "Lorem",
-      "et",
-      "aliquip"
-    ],
-    "friends": [
-      {
-        "id": 0,
-        "name": "Dolores Frye"
-      },
-      {
-        "id": 1,
-        "name": "Figueroa Chavez"
-      },
-      {
-        "id": 2,
-        "name": "Reyes Holder"
-      }
-    ],
-    "greeting": "Hello, Mercedes Perez! You have 4 unread messages.",
-    "favoriteFruit": "apple"
-  },
-  {
-    "_id": "58f2dbffc428ff111e4ade6f",
+    "_id": "59094a1787378095472b6126",
     "index": 4,
-    "isActive": true,
-    "balance": "$1,666.66",
-    "picture": "http://placehold.it/32x32",
-    "age": 25,
-    "name": "Petersen Hudson",
-    "email": "petersenhudson@decratex.com",
-    "phone": "+1 (886) 545-2709",
-    "address": "615 Brightwater Avenue, Torboy, Minnesota, 5333",
-    "about": "Qui eiusmod reprehenderit consectetur labore est ea reprehenderit eu voluptate occaecat. Reprehenderit quis cupidatat velit sit cillum consequat sunt magna laboris excepteur laborum. Cupidatat veniam eu sint voluptate eiusmod incididunt id adipisicing nostrud sunt fugiat aute veniam. Enim id sunt consectetur irure laborum anim occaecat mollit id voluptate. Eiusmod pariatur deserunt consequat magna cupidatat ipsum.\r\n",
-    "registered": "2015-07-28T04:17:35 +05:00",
-    "tags": [
-      "Lorem",
-      "sunt",
-      "consequat",
-      "eiusmod",
-      "nulla",
-      "Lorem",
+    "guid": "e27b9a0e-6e07-4e1c-aa24-1047258a7125",
+    "position": "left back",
+    "isActive": false,
+    "rank": 1,
+    "picture": "http://lorempixel.com/64/64/people/",
+    "age": 22,
+    "name": "Maura Palmer",
+    "email": "maurapalmer@telequiet.com",
+    "phone": "+1 (894) 430-3480",
+    "address": "289 Montrose Avenue, Yonah, Palau, 6090",
+    "about": "Ex do consequat nostrud ut ea qui cupidatat enim proident excepteur aliquip consectetur nulla. Officia labore duis cillum reprehenderit deserunt eiusmod. Labore et est nostrud nulla magna reprehenderit cupidatat culpa aliquip mollit est quis. Magna consequat cupidatat minim in enim sit exercitation duis est sunt labore. Duis Lorem ea cillum deserunt esse officia voluptate sint elit aute incididunt. Esse voluptate Lorem est deserunt deserunt occaecat eu minim.\r\n",
+    "badges": [
+      "ullamco",
+      "deserunt",
+      "dolore",
+      "laboris",
+      "exercitation",
+      "tempor",
       "sit"
     ],
-    "friends": [
+    "stats": [
       {
-        "id": 0,
-        "name": "Marilyn Davis"
+        "type": "saves",
+        "percentage": 73,
+        "amount": 11
       },
       {
-        "id": 1,
-        "name": "Mccall Hamilton"
+        "type": "assists",
+        "percentage": 22,
+        "amount": 19
       },
       {
-        "id": 2,
-        "name": "Carr Little"
+        "type": "goals",
+        "percentage": 87,
+        "amount": 20
+      },
+      {
+        "type": "goals",
+        "percentage": 57,
+        "amount": 5
       }
     ],
-    "greeting": "Hello, Petersen Hudson! You have 4 unread messages.",
-    "favoriteFruit": "banana"
+    "greeting": "Hello, Maura Palmer! You have 1 unread messages."
   },
   {
-    "_id": "58f2dbffbd811931c671a25e",
+    "_id": "59094a17069b41820eb0784e",
     "index": 5,
-    "isActive": false,
-    "balance": "$3,599.24",
-    "picture": "http://placehold.it/32x32",
-    "age": 23,
-    "name": "Estes Andrews",
-    "email": "estesandrews@decratex.com",
-    "phone": "+1 (911) 582-2167",
-    "address": "201 Albee Square, Vienna, Indiana, 2714",
-    "about": "Ea minim qui cillum ut quis duis laborum. Proident et sit in fugiat. Voluptate do pariatur reprehenderit eiusmod nulla quis quis deserunt. Ea excepteur sit consequat incididunt dolore enim magna consequat. Dolor fugiat dolor fugiat laboris mollit. Esse eu esse incididunt aute occaecat ex. Ea ut excepteur commodo sunt.\r\n",
-    "registered": "2016-03-08T03:39:18 +06:00",
-    "tags": [
-      "culpa",
-      "aliqua",
-      "nisi",
-      "mollit",
-      "aute",
-      "culpa",
-      "amet"
-    ],
-    "friends": [
-      {
-        "id": 0,
-        "name": "Aimee Byrd"
-      },
-      {
-        "id": 1,
-        "name": "Wilkerson Delaney"
-      },
-      {
-        "id": 2,
-        "name": "Rochelle Osborn"
-      }
-    ],
-    "greeting": "Hello, Estes Andrews! You have 7 unread messages.",
-    "favoriteFruit": "banana"
-  },
-  {
-    "_id": "58f2dbff9381ab68f5b47461",
-    "index": 6,
+    "guid": "c7de33e0-f31b-41f3-b368-ef168a97eb97",
+    "position": "left midfielder",
     "isActive": true,
-    "balance": "$1,804.68",
-    "picture": "http://placehold.it/32x32",
-    "age": 28,
-    "name": "James Estes",
-    "email": "jamesestes@decratex.com",
-    "phone": "+1 (865) 481-3073",
-    "address": "779 Brown Street, Chumuckla, Guam, 8107",
-    "about": "Aliquip laborum ullamco officia enim laborum do labore est esse. Eiusmod cupidatat qui cupidatat Lorem anim nulla dolor. Incididunt eiusmod Lorem fugiat enim irure commodo exercitation culpa ut dolor non dolor laborum esse. Magna nostrud excepteur nulla in. Eiusmod culpa aliquip magna officia ut ut tempor magna ex voluptate ullamco veniam. Qui enim esse nisi labore est et culpa labore.\r\n",
-    "registered": "2016-01-05T05:53:10 +06:00",
-    "tags": [
-      "ullamco",
-      "proident",
-      "ad",
-      "minim",
-      "exercitation",
-      "amet",
-      "veniam"
-    ],
-    "friends": [
-      {
-        "id": 0,
-        "name": "Bertha Colon"
-      },
-      {
-        "id": 1,
-        "name": "Kelli Moreno"
-      },
-      {
-        "id": 2,
-        "name": "Sparks Houston"
-      }
-    ],
-    "greeting": "Hello, James Estes! You have 6 unread messages.",
-    "favoriteFruit": "apple"
-  },
-  {
-    "_id": "58f2dbffa3fa0d880dfce746",
-    "index": 7,
-    "isActive": true,
-    "balance": "$2,972.41",
-    "picture": "http://placehold.it/32x32",
-    "age": 35,
-    "name": "Nona Velasquez",
-    "email": "nonavelasquez@decratex.com",
-    "phone": "+1 (807) 418-2111",
-    "address": "760 Adelphi Street, Broadlands, Alaska, 3790",
-    "about": "Excepteur consequat labore qui ut duis cupidatat consequat. Ex consectetur sit occaecat cupidatat aliqua ipsum qui consequat irure aliqua occaecat. Ad officia nisi excepteur occaecat qui sint amet nulla. Enim veniam deserunt ullamco quis eu ad consequat tempor ex non consectetur. Est consectetur deserunt voluptate officia non magna dolor ex. Irure reprehenderit id mollit esse consectetur non velit.\r\n",
-    "registered": "2016-05-04T10:07:35 +05:00",
-    "tags": [
-      "voluptate",
-      "sit",
-      "eu",
-      "irure",
-      "dolore",
-      "culpa",
-      "magna"
-    ],
-    "friends": [
-      {
-        "id": 0,
-        "name": "Sweet Griffith"
-      },
-      {
-        "id": 1,
-        "name": "Angelia Swanson"
-      },
-      {
-        "id": 2,
-        "name": "Jodie Bond"
-      }
-    ],
-    "greeting": "Hello, Nona Velasquez! You have 7 unread messages.",
-    "favoriteFruit": "banana"
-  },
-  {
-    "_id": "58f2dbff7f6b5b0b3ce191a1",
-    "index": 8,
-    "isActive": false,
-    "balance": "$2,503.08",
-    "picture": "http://placehold.it/32x32",
-    "age": 33,
-    "name": "Sheri Ross",
-    "email": "sheriross@decratex.com",
-    "phone": "+1 (977) 468-2674",
-    "address": "899 Seeley Street, Skyland, Oregon, 228",
-    "about": "Fugiat elit ea laboris nulla pariatur pariatur nostrud exercitation consectetur est est qui velit commodo. Cupidatat cupidatat labore laborum ut eu aliqua eu ad id nisi fugiat amet et aliquip. Aliqua cillum officia veniam deserunt exercitation dolor in fugiat amet pariatur. Ullamco anim ut incididunt sint aute.\r\n",
-    "registered": "2014-05-08T02:12:50 +05:00",
-    "tags": [
-      "ad",
-      "tempor",
-      "deserunt",
-      "ex",
-      "elit",
+    "rank": 5,
+    "picture": "http://lorempixel.com/64/64/people/",
+    "age": 21,
+    "name": "Dixon Ingram",
+    "email": "dixoningram@telequiet.com",
+    "phone": "+1 (947) 580-3136",
+    "address": "304 Victor Road, Guthrie, Oregon, 1788",
+    "about": "Excepteur consequat anim amet excepteur non duis consectetur non reprehenderit. Minim consequat deserunt culpa mollit id dolor cupidatat esse sit laborum. Sunt laborum culpa laborum enim consectetur eu veniam sit officia labore laborum commodo ipsum. Labore culpa exercitation tempor eiusmod do voluptate proident culpa nulla in pariatur ut.\r\n",
+    "badges": [
+      "sint",
+      "officia",
       "esse",
-      "reprehenderit"
-    ],
-    "friends": [
-      {
-        "id": 0,
-        "name": "Sweeney Welch"
-      },
-      {
-        "id": 1,
-        "name": "Emily Faulkner"
-      },
-      {
-        "id": 2,
-        "name": "Eaton Underwood"
-      }
-    ],
-    "greeting": "Hello, Sheri Ross! You have 9 unread messages.",
-    "favoriteFruit": "strawberry"
-  },
-  {
-    "_id": "58f2dbff15a069ecc0af951f",
-    "index": 9,
-    "isActive": false,
-    "balance": "$1,852.36",
-    "picture": "http://placehold.it/32x32",
-    "age": 22,
-    "name": "Montoya Hill",
-    "email": "montoyahill@decratex.com",
-    "phone": "+1 (986) 585-2196",
-    "address": "519 Chester Court, Hendersonville, Montana, 4027",
-    "about": "Veniam mollit minim consectetur non veniam exercitation ex adipisicing consectetur ex duis. Exercitation ad ex deserunt sint esse id enim ullamco enim esse laboris. Commodo est sint aute nulla commodo. Minim ut aute dolore ipsum cupidatat do aute veniam mollit nisi incididunt. In officia labore Lorem aute nostrud.\r\n",
-    "registered": "2016-07-22T04:10:01 +05:00",
-    "tags": [
-      "nisi",
-      "laborum",
-      "reprehenderit",
-      "eu",
-      "incididunt",
-      "elit",
-      "exercitation"
-    ],
-    "friends": [
-      {
-        "id": 0,
-        "name": "Jean Barrett"
-      },
-      {
-        "id": 1,
-        "name": "Rios Howell"
-      },
-      {
-        "id": 2,
-        "name": "Alvarado Curry"
-      }
-    ],
-    "greeting": "Hello, Montoya Hill! You have 9 unread messages.",
-    "favoriteFruit": "strawberry"
-  },
-  {
-    "_id": "58f2dbff681e2bec7918579f",
-    "index": 10,
-    "isActive": false,
-    "balance": "$2,776.04",
-    "picture": "http://placehold.it/32x32",
-    "age": 39,
-    "name": "Oliver Russell",
-    "email": "oliverrussell@decratex.com",
-    "phone": "+1 (864) 407-3485",
-    "address": "562 Strong Place, Southview, Ohio, 3895",
-    "about": "Cupidatat officia qui laboris adipisicing aute eu dolore in ad cillum eiusmod non et sint. Consectetur eiusmod et dolore dolore magna Lorem nostrud aliqua pariatur culpa velit Lorem est. Ad fugiat adipisicing aute nostrud. In dolore reprehenderit et et eiusmod. Sit aliqua ut dolore consequat incididunt. Nulla do laboris exercitation cillum ut laboris consequat ullamco ad. Ipsum enim laborum aliqua cillum reprehenderit aliqua.\r\n",
-    "registered": "2015-01-03T12:18:30 +06:00",
-    "tags": [
-      "aute",
-      "cillum",
-      "aliquip",
-      "proident",
-      "in",
-      "elit",
-      "aliquip"
-    ],
-    "friends": [
-      {
-        "id": 0,
-        "name": "Moss Parks"
-      },
-      {
-        "id": 1,
-        "name": "Grant Peters"
-      },
-      {
-        "id": 2,
-        "name": "Deann Booth"
-      }
-    ],
-    "greeting": "Hello, Oliver Russell! You have 9 unread messages.",
-    "favoriteFruit": "banana"
-  },
-  {
-    "_id": "58f2dbff316b15e8d8b23fa5",
-    "index": 11,
-    "isActive": false,
-    "balance": "$3,531.95",
-    "picture": "http://placehold.it/32x32",
-    "age": 33,
-    "name": "Alberta Daugherty",
-    "email": "albertadaugherty@decratex.com",
-    "phone": "+1 (815) 549-3314",
-    "address": "783 Troutman Street, Sardis, Maryland, 2367",
-    "about": "Ea est aliqua ad laboris aliqua magna duis ea. Velit sit consectetur do duis reprehenderit ullamco culpa minim labore. Duis dolore ad dolore exercitation aliqua. Commodo pariatur cupidatat pariatur id in consectetur qui voluptate in nostrud in incididunt.\r\n",
-    "registered": "2014-07-13T10:20:44 +05:00",
-    "tags": [
-      "proident",
-      "magna",
-      "labore",
-      "excepteur",
-      "aliquip",
-      "commodo",
-      "voluptate"
-    ],
-    "friends": [
-      {
-        "id": 0,
-        "name": "Olive Mayo"
-      },
-      {
-        "id": 1,
-        "name": "Lawrence Stanley"
-      },
-      {
-        "id": 2,
-        "name": "Mendoza Carter"
-      }
-    ],
-    "greeting": "Hello, Alberta Daugherty! You have 4 unread messages.",
-    "favoriteFruit": "strawberry"
-  },
-  {
-    "_id": "58f2dbff1f65d3ded411345c",
-    "index": 12,
-    "isActive": false,
-    "balance": "$3,566.69",
-    "picture": "http://placehold.it/32x32",
-    "age": 40,
-    "name": "Rosalyn Figueroa",
-    "email": "rosalynfigueroa@decratex.com",
-    "phone": "+1 (853) 531-2439",
-    "address": "808 Orange Street, Ferney, Michigan, 1472",
-    "about": "Qui cillum sunt est est ea. Nulla incididunt magna do non eiusmod deserunt. Duis deserunt irure deserunt magna esse consequat ut exercitation proident occaecat.\r\n",
-    "registered": "2014-11-16T11:28:10 +06:00",
-    "tags": [
-      "non",
-      "non",
-      "cillum",
       "fugiat",
-      "et",
-      "nulla",
-      "irure"
+      "cillum",
+      "sit",
+      "ullamco"
     ],
-    "friends": [
+    "stats": [
       {
-        "id": 0,
-        "name": "Buckley Payne"
+        "type": "goals",
+        "percentage": 90,
+        "amount": 15
       },
       {
-        "id": 1,
-        "name": "Christi Clements"
+        "type": "saves",
+        "percentage": 50,
+        "amount": 14
       },
       {
-        "id": 2,
-        "name": "Garcia Finch"
+        "type": "goals",
+        "percentage": 42,
+        "amount": 6
+      },
+      {
+        "type": "assists",
+        "percentage": 62,
+        "amount": 10
       }
     ],
-    "greeting": "Hello, Rosalyn Figueroa! You have 5 unread messages.",
-    "favoriteFruit": "strawberry"
+    "greeting": "Hello, Dixon Ingram! You have 4 unread messages."
+  },
+  {
+    "_id": "59094a1722ac3236ab949e12",
+    "index": 6,
+    "guid": "b6e234c0-161c-45c4-b7fa-afd497cb95b3",
+    "position": "sweeper",
+    "isActive": true,
+    "rank": 14,
+    "picture": "http://lorempixel.com/64/64/people/",
+    "age": 20,
+    "name": "Dianne Schultz",
+    "email": "dianneschultz@telequiet.com",
+    "phone": "+1 (860) 547-2805",
+    "address": "286 Meserole Avenue, Bourg, Ohio, 3343",
+    "about": "Reprehenderit qui et minim deserunt consectetur commodo ea eu in ipsum est. Ut anim sit nulla cupidatat magna reprehenderit exercitation laborum. Veniam enim ipsum aliqua eu in non. Id et voluptate laboris ea commodo. Id occaecat mollit voluptate et elit ipsum nostrud occaecat veniam elit quis magna magna.\r\n",
+    "badges": [
+      "non",
+      "do",
+      "excepteur",
+      "non",
+      "reprehenderit",
+      "sunt",
+      "laborum"
+    ],
+    "stats": [
+      {
+        "type": "errors",
+        "percentage": 19,
+        "amount": 16
+      },
+      {
+        "type": "goals",
+        "percentage": 71,
+        "amount": 10
+      },
+      {
+        "type": "errors",
+        "percentage": 54,
+        "amount": 8
+      },
+      {
+        "type": "assists",
+        "percentage": 86,
+        "amount": 8
+      }
+    ],
+    "greeting": "Hello, Dianne Schultz! You have 10 unread messages."
   }
 ]

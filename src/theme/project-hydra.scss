@@ -1,0 +1,1094 @@
+// ----
+// Sass (v3.4.21)
+// Compass (v1.0.3)
+// ----
+
+// Things to consider
+// custom components
+// custom widths
+// custom buttons/ ui pieces
+// run extends for certain classes of info
+  // - a whole bunch of classes arent going to do you much good whenever you need to change something
+// variables for custom work
+// keep it below 10kb--sssschhhhhhhhhh :|
+// import everything after finished
+// create comples styles based on these classes
+
+// items that you would want in your css
+
+// modular scale
+// defines every aspect of sizing outside columns
+$base: 1;
+$ratio: 1.3;
+$breakpointMin: 480;
+$breakpointMax: 1200;
+$lineHeightRatio: 1.35;
+$unitOfMeasurement: 'rem';
+$min : $base/$ratio;
+// define columns and breakpoints
+$sm-columns: 10;
+$md-columns: 14;
+$lg-columns: 12;
+$maxScreenSize: 1400;
+$minScreenSize: 480;
+$units: '%'; // vw/ %/ px
+$amount: 100; //percent, px etc
+$colSm: 'col-sm-'; // define column names if you wish
+$colMd: 'col-md-';
+$colLg : 'col-lg-';
+
+$ltGrey : #d8d8d8;
+$primary : #387ef5;
+$blue600 : #091B39;
+$blue400 :#09379E;
+$blue300: #1850D7;
+$blue100: #90adf3;
+$blue000:#dae5ff;
+$red800: #b11118;
+$red400 : #f9212b;
+$red100 : #fd4d4d;
+$green400: #1ad41a;
+$grey500 : #3F3B3B;
+$grey400 : #7E7E7E;
+$grey300 : #D1D1D1;
+$grey200 : #e0e0e0;
+$grey100 : #e8e8e8;
+$white: #ffffff;
+$black : #1B1B1B;
+
+$colorArray: (
+  ("ltGrey", $ltGrey),
+  ("primary", $primary),
+  ("blue600", $blue600),
+  ("blue400", $blue400),
+  ("blue300", $blue300),
+  ("blue100", $blue100),
+  ("blue000", $blue000),
+  ("red800", $red800),
+  ("red400", $red400),
+  ("red100", $red100),
+  ("green400", $green400),
+  ("grey500", $grey500),
+  ("grey400", $grey400),
+  ("grey300", $grey300),
+  ("grey200", $grey200),
+  ("white", $white),
+  ("black", $black)
+);
+
+// $colors : ("black", "white", "green", "#e4e4e4");
+// @each $number in $colors {
+//   .#{$number} {
+//     color: #{$number};
+//   }
+// }
+// define main colors of your site
+// used for
+// background-color, color, borde-color, etc.
+// #{$colorArray(1(1))} {
+//   color: $colorArray(1(1))
+// }
+// default border radius
+// generic to all borders
+$border-radius: 3px;
+
+// exponential function
+@function pow($number, $exponent) {
+  $value: $min;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+@for $i from 1 through 9 {
+
+  $modular-scale : (pow($ratio, $i) * $min) * 1#{$unitOfMeasurement};
+  $lhScale : ((pow($ratio, $i) * $min) * $lineHeightRatio) * 1#{$unitOfMeasurement};
+
+  .text#{$i}00 {
+    font-size: $modular-scale;
+    line-height: $lhScale;
+    font-weight: $i*100;
+  }
+  .fntsz#{$i}00 {font-size: $modular-scale;}
+  .lh#{$i}00 {line-height: $lhScale;}
+  .fw#{$i}00 {font-weight: $i*100;}
+  .margin#{$i}00 {margin: $modular-scale;}
+  .mt#{$i}00 {margin-top: $modular-scale;}
+  .mr#{$i}00 {margin-right: $modular-scale;}
+  .mb#{$i}00 {margin-bottom: $modular-scale;}
+  .ml#{$i}00 {margin-left: $modular-scale;}
+  .pad#{$i}00 {padding: $modular-scale;}
+  .pt#{$i}00 {padding-top: $modular-scale;}
+  .pr#{$i}00 {padding-right: $modular-scale;}
+  .pb#{$i}00 {padding-bottom: $modular-scale;}
+  .pl#{$i}00 {padding-left: $modular-scale;}
+  .ptb#{$i}00 {padding-bottom: $modular-scale; padding-top: $modular-scale}
+  .plr#{$i}00 {padding-left: $modular-scale; padding-right: $modular-scale}
+  .mtb#{$i}00 {margin-bottom: $modular-scale; margin-top: $modular-scale}
+  .mlr#{$i}00 {margin-left: $modular-scale; margin-right: $modular-scale}
+  .fxg#{$i}00 {flex-grow: $i;}
+  .fxsh#{$i}00 {flex-shrink: $i;}
+}
+.list  {
+  & > * {
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+  & > * {
+    &:last-of-type {
+      margin-right: 0;
+    }
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
+.m0 {
+  margin: 0;
+}
+.p0 {
+  padding: 0;
+}
+// positiong, left, right, top, bottom
+@for $i from 0 through 10 {
+  .t-#{$i}0 { top: #{$i}0%; }
+  .r-#{$i}0 { right: #{$i}0%; }
+  .b-#{$i}0 { bottom: #{$i}0%; }
+  .l-#{$i}0 { left: #{$i}0%; }
+  .vht-#{$i}00 { top: #{$i}0%; }
+  .vwr-#{$i}00 { right: #{$i}0%; }
+  .vhb-#{$i}00 { bottom: #{$i}0%; }
+  .vwl-#{$i}00 { left: #{$i}0%; }
+  .w#{$i}0 { width: #{$i}0%; }
+  .h#{$i}0 { height: #{$i}0%; }
+  .vw#{$i}0 { width: #{$i}0vw; }
+  .vh#{$i}0 { height: #{$i}0vh; }
+  .bdrds#{$i} { border-radius: #{$i}px; }
+  .pad#{$i}px { padding: #{$i}px; }
+  .pb#{$i}px { padding-bottom: #{$i}px; }
+  .pt#{$i}px { padding-top: #{$i}px; }
+  .pl#{$i}px { padding-left: #{$i}px; }
+  .pr#{$i}px { padding-right: #{$i}px; }
+  .m#{$i}px { margin: #{$i}px; }
+  .mb#{$i}px { margin-bottom: #{$i}px; }
+  .mt#{$i}px { margin-top: #{$i}px; }
+  .ml#{$i}px { margin-left: #{$i}px; }
+  .mr#{$i}px { margin-right: #{$i}px; }
+  .bxsh#{$i} { box-shadow: #{$i}px #{$i}px #{$i}px rgba(0, 0, 0, 0.35); }
+  .bxshHorz#{$i} { box-shadow: #{$i}px 0 #{$i}px rgba(0, 0, 0, 0.35); }
+  .bxshVert#{$i} { box-shadow: 0 #{$i}px #{$i + 1}px rgba(0, 0, 0, 0.35); }
+  .maw#{$i}00 { max-width: #{$i}0vw; }
+  .miw#{$i}00 { min-width: #{$i}0vw; }
+  .mah#{$i}00 { max-height: #{$i}0vh; }
+  .mih#{$i}00 { min-height: #{$i}0vh; }
+  .bw#{$i}00 {border-width: #{$i}px; }
+  .bbw#{$i}00 {border-width: 0 0 #{$i}px 0;}
+  .btw#{$i}00 {border-width: #{$i}px 0 0 0;}
+  .brw#{$i}00 {border-width: 0 #{$i}px 0 0;}
+  .blw#{$i}00 {border-width: 0 0 0 #{$i}px;}
+}
+// define colors
+@each $number in $colorArray {
+  .bgc-#{nth($number, 1)} {
+    background-color: transparentize(nth($number, 2), 0);
+  }
+  .bdc-#{nth($number, 1)} {
+    border-color: transparentize(nth($number, 2), 0);
+  }
+  .color-#{nth($number, 1)} {
+    color: transparentize(nth($number, 2), 0);
+  }
+}
+
+$array: $sm-columns, $md-columns, $lg-columns;
+
+@each $number in $array {
+  @for $i from 1 through $number{
+    @media screen and (max-width:#{$minScreenSize}px) {
+      @if $number == $sm-columns {
+        .#{$colSm}#{$i} {
+          width: calc((#{$amount}#{$units}/ #{$number}) * #{$i});
+        }
+        .#{$colSm}push-#{$i}  {
+          left: calc((#{$amount}#{$units}/ #{$number}) * #{$i});
+        }
+        .#{$colSm}pull-#{$i}  {
+          right: calc((#{$amount}#{$units}/ #{$number}) * #{$i});
+        }
+      }
+    }
+    @if $number == $md-columns {
+      .#{$colMd}#{$i} {
+        width: calc((#{$amount}#{$units}/ #{$number}) * #{$i});
+      }
+      .#{$colMd}push-#{$i}  {
+        left: calc((#{$amount}#{$units}/ #{$number}) * #{$i});
+      }
+      .#{$colMd}pull-#{$i}  {
+        right: calc((#{$amount}#{$units}/ #{$number}) * #{$i});
+      }
+    }
+    @media screen and (min-width:#{$maxScreenSize}px) {
+      @if $number == $lg-columns {
+        .#{$colLg}#{$i} {
+          width: calc((#{$amount}#{$units}/ #{$number}) * #{$i});
+        }
+        .#{$colLg}push-#{$i}  {
+          left: calc((#{$amount}#{$units}/ #{$number}) * #{$i});
+        }
+        .#{$colLg}pull-#{$i}  {
+          right: calc((#{$amount}#{$units}/ #{$number}) * #{$i});
+        }
+      }
+    }
+  }
+}
+$bdrdsArray: (
+  (bdtrrs, top, right),
+  (bdtlrs, top, left),
+  (bdbrrs, bottom, right),
+  (bdblrs, bottom, left)
+);
+@each $number in $bdrdsArray {
+  .#{nth($number, 1)} {
+    border-#{nth($number, 2)}-#{nth($number, 3)}-radius: $border-radius;
+  }
+}
+
+//////////////
+// $var : fntsz400;
+// .button {
+//   @extend .#{$var};
+// }
+$button1FontSize : 'fntsz200'; // put these all into an array and run for loop on them
+$button1PaddingLR : 'plr400';
+$button1PaddingTB : 'ptb200';
+$button1TextDecoration: 'tdn'; // text decoration none
+$button1Background: $blue400;
+$button1Color: $white;
+$button1Border: $blue300;
+// button 2
+$button2FontSize : 'fntsz200'; // put these all into an array and run for loop on them
+$button2PaddingLR : 'plr300';
+$button2PaddingTB : 'ptb100';
+$button2TextDecoration: 'tdn'; // text decoration none
+$button2Background: $white;
+$button2Color: $grey400;
+$button2Border: $grey500 1px solid;
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes scaleOut {
+  0% {
+    transform: translate(-50%, -50%)scale(0);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%)scale(1);
+  }
+}
+@mixin scaleY {
+  transition: height .5s ease;
+  &::before {
+    height: 0%;
+  }
+  &:hover::before {
+    height: 100%;
+  }
+}
+// @keyframes scaleY {
+//   0% {
+//     height: 0%;
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//     height: 100%
+//   }
+// }
+//define animations
+$fadeAnimation: fadeIn;
+$scaleAnimation: scaleOut;
+$scaleHorizontalAnimation: scaleX;
+$scaleVerticalAnimation: scaleY;
+$pulseAnimation: pulse;
+$slideInFromBottom: slideInFromBottom;
+$slideInFromTop: slideInFromTop;
+$slideInFromLeft: slideInFromLeft;
+$slideInFromRight: slideInFromRight;
+$borderExpandAnimation: borderExpand;
+//define animation type
+$buttonAnimationOne: $scaleVerticalAnimation;
+$buttonAnimationTwo: $scaleVerticalAnimation;
+$buttonAnimationDuration: 0.25s;
+$buttonAnimationDelay: 0.0s;
+$buttonAnimationTimingFunction: ease-in-out;
+$buttonAnimationRepeat: none;
+
+$transitionDuration: 0.25s;
+$transitionAnimationDelay: 0.0s;
+$transitionTimingFunction: ease-in-out;
+
+@function transitionFunct($node){
+  // @if node  = array
+  // @else node is single
+  @return $node;
+}
+@mixin transition($type) {
+  transition: $type $transitionDuration $transitionTimingFunction;
+}
+.transition {
+  @include transition(transitionFunct(color));
+}
+
+
+
+
+// $buttonHoverState: ;
+
+$buttonTwoArray : (
+  ($button2FontSize, 'font-size'),
+  ($button2TextDecoration, 'text-decoration'),
+  ($button2PaddingLR, 'padding'),
+  ($button2PaddingTB, 'padding'),
+  ($button2Background, 'background'),
+  ($button2Color, 'color'),
+  ($button2Border, 'border')
+);
+$buttonOneArray : (
+  ($button1FontSize, 'font-size'),
+  ($button1TextDecoration, 'text-decoration'),
+  ($button1PaddingLR, 'padding'),
+  ($button1PaddingTB, 'padding'),
+  ($button1Background, 'background'),
+  ($button1Color, 'color'),
+  ($button1Border, 'border')
+);
+// ln 1281
+.button-1 {
+  @each $number in $buttonOneArray {
+    @if type-of(nth($number, 1)) == string {
+      @extend .#{nth($number, 1)}
+    } @else if type-of(nth($number, 1)) == bool {
+      // check if bool is true or false
+      @if type-of(nth($number, 1)) == true {
+        #{nth($number, 2)}: inherit;
+      } @else {
+        #{nth($number, 2)}: none;
+      }
+    } @else {
+      #{nth($number, 2)}: #{nth($number, 1)};
+    }
+  }
+  @extend .posr;
+  @extend .ovh;
+  @extend .cursorP;
+  z-index: 1;
+  &::before {
+    @extend .before;
+    @extend .bgc-blue600;
+    @extend .posa;
+    @extend .trans;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+  &.animation {
+    &:hover {
+      &::before {
+        animation: $buttonAnimationOne $buttonAnimationDuration $buttonAnimationTimingFunction $buttonAnimationDelay $buttonAnimationRepeat;
+        opacity: 1;
+      }
+    }
+  }
+  &.full {
+    @extend .bdrds4;
+    @extend .w100;
+  }
+}
+.button-2 {
+  @each $number in $buttonTwoArray {
+    @if type-of(nth($number, 1)) == string {
+      @extend .#{nth($number, 1)}
+    } @else if type-of(nth($number, 1)) == bool {
+      // check if bool is true or false
+      @if type-of(nth($number, 1)) == true {
+        #{nth($number, 2)}: inherit;
+      } @else {
+        #{nth($number, 2)}: none;
+      }
+    } @else {
+      #{nth($number, 2)}: #{nth($number, 1)};
+    }
+  }
+  @extend .posr;
+  @extend .ovh;
+  @extend .cursorP;
+  z-index: 1;
+  &.animation {
+    animation: $buttonAnimationTwo $buttonAnimationDuration $buttonAnimationTimingFunction $buttonAnimationDelay $buttonAnimationRepeat;;
+  }
+  &.full {
+    @extend .bdrds4;
+    @extend .w100;
+  }
+}
+
+form {}
+input {
+  @extend .bdc-grey300;
+  @extend .fntsz300;
+  @extend .pad5px !optional;
+  @extend .bdrds4;
+  @extend .bw100;
+  &.full {
+    @extend .w100;
+    @extend .db;
+  }
+}
+
+table {
+  @extend .bw100;
+  @extend .border-solid;
+  @extend .bdc-grey300;
+  &.full {
+    @extend .w100;
+  }
+  tbody tr {
+    @extend .pad100;
+    @extend .bw100;
+    @extend .border-solid;
+    @extend .bdc-grey300;
+    @extend .lh300;
+    &:nth-child(2n-1) {
+      @extend .bgc-grey200;
+    }
+    td {
+      @extend .pad5px;
+    }
+  }
+}
+
+
+
+// buttons
+//   size
+//     lg
+//     md
+//     sm
+//   hover
+//   transition
+//   outline
+//   full
+//   color
+//   rounded
+//   full?
+// form options
+//   input
+//     outline
+//     error
+//   dropdown
+//     hover
+//     bg
+//   select vs checkbox?
+//     dropdown of checkboxes?
+//   checkbox
+//     as toggle?
+//   radio
+//     with text? (on-off)
+//   slider
+//   search
+//   textbox
+//   columnGroup
+//   alerts
+//     success
+//     error
+//     warning
+//     info
+//   table
+//     row disparity
+//     offset background?
+//     border
+//     anchor
+//       hover
+//       tooltip?
+//   per field
+//     success vs error?
+// breadcrumbs
+// anchor (extend button styles)
+//   hover
+//   tooltip?
+//     top
+//     bttom
+//     left
+//     right
+// pagination
+// icon
+//   circle
+//   square
+//   rounded
+// shape of div (extend to icon)
+//   sqaure
+//   rounded
+//   diamond
+//   triangle
+// datepicker
+// h'supports
+// shadow
+// opacity
+//   mac styles?
+//   windows styles?
+// list (input etc)
+//   card list
+//   shadow
+//   border
+//   col
+//   profile
+//     vert
+//     horz
+//   flex
+//   nav
+//   masonry
+//   simple
+//   icon-right
+//   icon-left
+//   tabs
+// video
+//   title
+//     top
+//     bottom
+//   playbutton
+//     extend shape.
+//     middle
+//     bottom
+//
+// images what though?
+//
+//
+//
+//
+// ----------
+// MOBILE
+//   nav
+// default variables
+$border-length: 1px;
+.border-none {border-style: none;}
+.border-dotted {border-style: dotted;}
+.border-dashed {border-style: dashed;}
+.border-solid {border-style: solid;}
+.border-double {border-style: double;}
+.border-groove {border-style: groove;}
+.border-ridge {border-style: ridge;}
+.border-inset {border-style: inset;}
+.border-outset {border-style: outset;}
+.border-initial {border-style: initial;}
+.border-inherit {border-style: inherit;}
+.posa {
+position: absolute;
+}
+.posr {
+position: relative;
+}
+.posf {
+position: fixed;
+}
+.ta {
+text-align: left;
+}
+.ba {
+bottom: auto;
+}
+.la {
+left: auto;
+}
+.ra  {
+right: auto;
+}
+.fl {
+float: left;
+}
+.fr {
+float: right;
+}
+.fwn {
+font-weight: normal;
+}
+.cl {
+clear: both;
+}
+.cll {
+clear: left;
+}
+.clr {
+clear: right;
+}
+.clearfix {
+  &::after {
+    @extend .after;
+    @extend .cl;
+    @extend .db;
+  }
+}
+.db {
+display: block;
+}
+.dib {
+display: inline-block;
+}
+.df {
+display: -webkit-flex;
+display: -ms-flex;
+display: flex;
+}
+.dn {
+display: none;
+}
+.dnI {
+  display: none !important;
+}
+.dli {
+display: list-item;
+}
+.dt {
+display: table;
+}
+.vh {
+visibility: hidden;
+}
+.vv {
+visibility: visible;
+}
+.ovh {
+overflow: hidden;
+}
+.ovv {
+overflow: visible;
+}
+.ovs {
+  overflow-style: scrollbar;
+}
+.ovxh {
+overflow-x: hidden;
+}
+.ovxa {
+overflow-x: auto;
+}
+.ovxs {
+overflow-x: scroll;
+}
+.ovyh {
+overflow-y: hidden;
+}
+.ovya {
+overflow-y: auto;
+}
+.ovys {
+overflow-y: scroll;
+}
+.bxszbb {
+box-sizing: border-box;
+}
+.fsi {
+font-style: italic;
+}
+.fso {
+font-style: oblique;
+}
+.vat {
+vertical-align: top;
+}
+.vasup {
+vertical-align: super;
+}
+.vasub {
+vertical-align: sub;
+}
+.vam {
+vertical-align: middle;
+}
+.vabl {
+vertical-align: baseline;
+}
+.vab {
+vertical-align: bottom;
+}
+.tac {
+text-align: center;
+}
+.tal {
+text-align-last: auto;
+}
+.tar {
+text-align: right;
+}
+.taj {
+text-align: justify;
+}
+.talr {
+text-align-last: right;
+}
+.talc {
+text-align-last: center;
+}
+.tall {
+text-align-last: left;
+}
+.tdn {
+  text-decoration: none;
+}
+.ttu {
+text-transform: uppercase;
+}
+.ttc {
+text-transform: capitalize;
+}
+.ttl {
+text-transform: lowercase;
+}
+.twno {
+text-wrap: none;
+}
+.twn {
+text-wrap: normal;
+}
+.whsn {
+white-space: normal;
+}
+.whsp {
+white-space: pre;
+}
+.whsc {
+white-space: collapse;
+}
+.woba {
+word-break: break-all;
+}
+.wobn {
+word-break: normal;
+}
+.wobk {
+word-break: keep-all;
+}
+.wobka {
+word-break: keep-all;
+}
+.wown {
+word-wrap: none;
+}
+.wowu {
+word-wrap: unrestricted;
+}
+.wows {
+word-wrap: suppress;
+}
+.wowb {
+word-wrap: break-word;
+}
+.bgn {
+background: none;
+}
+.bgin {
+background-image: none;
+}
+.bgt {
+background-color: transparent;
+}
+.bgrn {
+background-repeat: no-repeat;
+}
+.bgrx {
+background-repeat: repeat-x;
+}
+.bgry {
+background-repeat: repeat-y;
+}
+.bgsza {
+background-size: auto;
+}
+.bgszcv {
+background-size: cover;
+}
+.bgszct {
+background-size: contain;
+}
+.oln {
+outline: none;
+}
+.olwtn {
+outline-width: thin;
+}
+.olwtc {
+outline-width: thick;
+}
+.olsn {
+outline-style: none;
+}
+.olsdt {
+outline-style: dotted;
+}
+.olsds {
+outline-style: dashed;
+}
+.olsdb {
+outline-style: double;
+}
+.olsg {
+outline-style: groove;
+}
+.olsr {
+outline-style: ridge;
+}
+.olsi {
+outline-style: inset;
+}
+.olci {
+outline-color: invert;
+}
+.tbla {
+table-layout: auto;
+}
+.tblf {
+table-layout: fixed;
+}
+.cpst {
+caption-side: top;
+}
+.cpsb {
+caption-side: bottom;
+}
+.ecs {
+empty-cells: show;
+}
+.ech {
+empty-cells: hide;
+}
+.bdn {
+border: none;
+}
+.bdtn {
+border-top: none;
+}
+.bdrn {
+border-right: none;
+}
+.bdbn {
+border-bottom: none;
+}
+.bdln {
+border-width:  $border-length;
+}
+.bdin {
+border-image: none;
+}
+.lsn {
+letter-spacing: normal;
+}
+.lstd {
+list-style-type: disc;
+}
+.lstc {
+list-style-type: circle;
+}
+.lsts {
+list-style-type: square;
+}
+.lstdc {
+list-style-type: decimal;
+}
+.lstlr {
+list-style-type: lower-roman;
+}
+.lstur {
+list-style-type: upper-roman;
+}
+.lstin {
+list-style-image: none;
+}
+.pgbba {
+page-break-before: auto;
+}
+.pgbbal {
+page-break-before: always;
+}
+.pgbbl {
+page-break-before: left;
+}
+.pgbbr {
+page-break-before: right;
+}
+.pgbia {
+page-break-inside: auto;
+}
+.pgbiav {
+page-break-inside: avoid;
+}
+.pgbaau {
+page-break-after: auto;
+}
+.pgbaal {
+page-break-after: always;
+}
+.pgbal {
+page-break-after: left;
+}
+.pgbar {
+page-break-after: right;
+}
+.asa {
+align-self: auto;
+}
+.asb {
+align-self: baseline;
+}
+.asc {
+align-self: center;
+}
+.asfe {
+align-self: flex-end;
+}
+.asfs {
+align-self: flex-start;
+}
+.ass {
+align-self: stretch;
+}
+.bfvv {
+backface-visibility: visible;
+}
+.bfvh {
+backface-visibility: hidden;
+}
+.fxdc {
+flex-direction: column;
+}
+.fxdcr {
+flex-direction: column-reverse;
+}
+.fxdr {
+flex-direction: row;
+}
+.fxwn {
+flex-wrap: nowrap;
+}
+.fxww {
+flex-wrap: wrap;
+}
+.fxwrr {
+flex-wrap: wrap-reverse;
+}
+.jcc {
+justify-content: center;
+}
+.jcfe {
+justify-content: flex-end;
+}
+.jcfs {
+justify-content: flex-start;
+}
+.jcsa {
+justify-content: space-around;
+}
+.jcsb {
+justify-content: space-between;
+}
+.tovc {
+text-overflow: clip;
+}
+
+// dont automate
+.cursorA {
+  cursor: auto;
+}
+.cursorD {
+  cursor: default;
+}
+.cursorH {
+  cursor: help;
+}
+.cursorP {
+  cursor: pointer;
+}
+.cursorT {
+  cursor: text;
+}
+.bgrAll {
+  background-repeat: all;
+}
+.before {
+  content: '';
+  display: block;
+}
+.after {
+  content: '';
+  display: block;
+}
+.trans {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+.transX {
+  transform: translateX(-50%);
+  left: 50%;
+}
+.transY {
+  transform: translateY(-50%);
+  top: 50%;
+}
+.bdrds50 {
+border-radius: 50%;
+}
+.bdtrrs50 {
+  border-top-left-radius: 50%;
+}
+.bdtlrs50 {
+  border-top-right-radius: 50%;
+}
+.bdblrs50 {
+  border-bottom-left-radius: 50%;
+}
+.bdbrrs50 {
+  border-bottom-right-radius: 50%;
+}
+.fullWidth {
+  width: 100%;
+}
+.fullHeight {
+  height: 100%
+}
+
+
+// .colmf {
+// column-fill: ;
+// }
+// .colmg {
+// column-gap: ;
+// }
+// .colmr {
+// column-rule: ;
+// }
+// .colms {
+// column-span: ;
+// }
+// .colmw {
+// column-width: ;
+// }
+// col
+// colmc

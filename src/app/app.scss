@@ -1,4 +1,233 @@
-
 .scroll-content {
 	margin-top: 56px;
 }
+* {
+  font-family: 'Open Sans', arial, sans-srif;
+}
+h1 {
+	@extend .text600;
+}
+h2 {
+	@extend .text500;
+}
+h3 {
+	@extend .text400;
+}
+h4 {
+	@extend .text300;
+}
+h5 {
+	@extend .text200;
+}
+h6 {
+	@extend .text100;
+}
+p {
+  @extend .text300;
+}
+
+// ----
+// Sass (v3.4.21)
+// Compass (v1.0.3)
+// ----
+
+// * {
+//   font-family: 'Open Sans', arial, sans-srif;
+//   font-size: 98%;
+//   @extend .bxszbb;
+//   @extend .color-grey500;
+// }
+// a {
+//   @extend .color-blue400;
+// }
+// nav {
+//   div {
+//     @extend .db;
+//     @extend .w100;
+//   }
+//   a, span {
+//     @extend .db;
+//     @extend .color-blue400;
+//     @extend .tdn;
+//     @extend .fntsz100;
+//     @extend .fw600;
+//     @extend .ttu;
+//     @extend .border-solid;
+//     @extend .bbw100;
+//     @extend .bdc-grey200;
+//     @extend .pad100;
+//     transition: background-color .5s ease, color .5s ease;
+//   }
+//   a:hover {
+//     @extend .bgc-grey200;
+//     @extend .color-blue300;
+//   }
+//   span {
+//     @extend .color-grey400;
+//   }
+// }
+// #content {
+//   @extend .pad400;
+//   @extend .posr;
+//   @extend .vwl-200;
+//   @extend .col-md-10;
+//   @extend .col-md-push-3;
+// }
+// table {
+//   thead {
+//     @extend .bdc-blue300;
+//     tr {
+//       @extend .bgc-blue100;
+//       th {
+//         @extend .lh300;
+//         @extend .pad5px;
+//         @extend .color-white;
+//         @extend .fw100;
+//       }
+//     }
+//   }
+//   tbody {
+//     tr {
+//       &:nth-child(2n-1) {
+//         background-color: $blue000;
+//       }
+//     }
+//   }
+//   td {
+//   }
+//   &.table {
+//     th {
+//       // @extend .posr;
+//       // &::before {
+//       //   @extend .before;
+//       //   @extend .db;
+//       //   @extend .posa;
+//       //   @extend .transY;
+//       //   @extend .r-100;
+//       //   width: 0;
+//       //   height: 0;
+//       //   @extend .border-solid;
+//       //   border-width: 10px 5px 0 5px;
+//       //   border-color: $blue300 transparent transparent transparent;
+//       // }
+//     }
+//   }
+// }
+//
+// form {
+//   &.list {
+//     & > *:not(button) {
+//       @extend .pb400;
+//     }
+//   }
+//   &.stacked {
+//     label {
+//       @extend .db;
+//       @extend .pb5px;
+//     }
+//     input[type="text"] {
+//       @extend .w100;
+//       @extend .fw100;
+//     }
+//     p {
+//       @extend .m0;
+//     }
+//   }
+// }
+// .error {
+//   @extend .color-red400;
+//   @extend .fntsz100;
+//   @extend .pt100;
+//   &.box {
+//     @extend .mtb400;
+//     @extend .pad300;
+//     @extend .color-red400;
+//     @extend .bw100;
+//     @extend .bdc-red400;
+//     @extend .border-solid;
+//     @extend .bgc-red100;
+//     @extend .fntsz200;
+//     @extend .tac;
+//   }
+// }
+// select {
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   appearance: none;
+//   @extend .bw100;
+//   @extend .bdc-blue300;
+//   @extend .border-solid;
+//   @extend .color-blue300;
+//   @extend .pad200;
+//   @extend .w100;
+//   border-radius: 0;
+// }
+// .selectContainer {
+//   @extend .posr;
+//   @extend .dib;
+//   &::before {
+//     @extend .before;
+//     @extend .posa;
+//     @extend .transY;
+//     @extend .r-10;
+//     // break this out for triangle function
+//     width: 0;
+//     height: 0;
+//     @extend .border-solid;
+//     border-width: 10px 5px 0 5px;
+//     border-color: $blue300 transparent transparent transparent;
+//   }
+// }
+//
+// .row {
+//   @extend .db;
+//   @extend .ptb200;
+// }
+//
+//
+// // datatables
+// #dataTables_wrapper {
+//   @extend .clearfix;
+// }
+// .dataTables_info {
+//   @extend .fntsz100;
+//   @extend .fl;
+//   @extend .row;
+//   @extend .mt100;
+// }
+// .dataTables_paginate {
+//   @extend .fr;
+//   @extend .row;
+//   @extend .mt100;
+//   & > a {
+//     @extend .pad10px;
+//     @extend .border-solid;
+//     @extend .brw100;
+//     @extend .bdc-grey200;
+//     &:last-of-type {
+//       border: none;
+//     }
+//   }
+//   & > span a {
+//     @extend .pad10px;
+//     @extend .border-solid;
+//     @extend .brw100;
+//     @extend .bdc-grey200;
+//     @include transition(transitionFunct(color));
+//     &.current {
+//       @extend .bgc-blue300;
+//       @extend .color-white;
+//     }
+//     &:hover {
+//       @extend .bgc-blue100;
+//       @extend .color-white;
+//     }
+//   }
+// }
+//
+// .goHome {
+//   @extend .posf;
+//   @extend .col-md-3;
+//   left: 0;
+//   bottom: 0;
+// }

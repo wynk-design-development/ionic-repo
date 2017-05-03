@@ -9,6 +9,10 @@ import { MyApp } from './app.component';
 // Firebase
 import { AngularFireModule } from 'angularfire2';
 
+// native
+import { CallNumber } from '@ionic-native/call-number';
+import { EmailComposer } from '@ionic-native/email-composer';
+
 // pages
 import { HomePage } from '../pages/home/home';
 import { Login } from '../pages/login/login';
@@ -76,7 +80,10 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    //native
+    CallNumber,
+    EmailComposer
   ]
 })
 export class AppModule {}

@@ -1,0 +1,33 @@
+[
+  '{{repeat(5, 7)}}',
+  {
+    _id: '{{objectId()}}',
+    index: '{{index()}}',
+    guid: '{{guid()}}',
+    position: '{{random("forward", "right back", "right midfielder", "defensive midfielder", "goalkeeper", "striker", "left midfielder", "defensive midfielder click to hear", "left back", "stopper", "sweeper")}}',
+    isActive: '{{bool()}}',
+    rank: '{{integer(1, 25)}}',
+    picture: 'http://lorempixel.com/64/64/people/',
+    age: '{{integer(18, 25)}}',
+    name: '{{firstName()}} {{surname()}}',
+    email: '{{email()}}',
+    phone: '+1 {{phone()}}',
+    address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    about: '{{lorem(1, "paragraphs")}}',
+    badges: [
+      '{{repeat(7)}}',
+      '{{lorem(1, "words")}}'
+    ],
+    stats: [
+      '{{repeat(4)}}',
+      {
+        type: '{{random("goals", "saves", "assists", "errors")}}',
+        percentage: '{{integer(18, 90)}}',
+        amount: '{{integer(5, 20)}}'
+      }
+    ],
+    greeting: function (tags) {
+      return 'Hello, ' + this.name + '! You have ' + tags.integer(1, 10) + ' unread messages.';
+    }
+  }
+]

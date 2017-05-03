@@ -15,10 +15,51 @@
 
 <ion-content padding>
 
-  <div>
+  <div id="profile">
+    <div id="profileHead" class="w50 transX posr">
+      <img [src]="player.picture" alt="">
+      <button
+        ion-button
+        icon-only
+        small
+        round
+        (click)="callMe(player.phone)">
+        <ion-icon name="call"></ion-icon>
+      </button>
+      <button
+        ion-button
+        icon-only
+        small
+        round
+        (click)="email(player.email)">
+        <ion-icon name="mail"></ion-icon>
+      </button>
+    </div>
     <h1>{{player.name}}</h1>
+    <div id="stats">
+      <div *ngFor="let stat of player.stats; let $i = index" class="clearfix">
+        <div statBar class="db">
+          <div [ngStyle]="{'width': stat.percentage + '%'}"></div>
+        </div>
+        <p class="fl">{{stat.amount}} {{stat.type}}</p>
+        <p class="fr">{{stat.percentage}}%</p>
+      </div>
+    </div>
     <p>{{player.about}}</p>
-    <p>{{player._id}}</p>
+    <div id="badges" class="clearfix col-md-12 ptb400 col-md-push-1 posr">
+      <h2>Player Awards</h2>
+      <div class="fl db w20 posr" *ngFor="let badge of player.badges">
+        <button
+          ion-button
+          round
+          icon-only
+          class="bgc-red400 color-white db transX posr"
+          (click)="showBadgeDetails(badge)">
+          <ion-icon name="football"></ion-icon>
+        </button>
+        <p class="text200 tac w100">{{badge}}</p>
+      </div>
+    </div>
   </div>
 
 </ion-content>

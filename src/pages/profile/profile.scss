@@ -1,3 +1,55 @@
 page-profile {
+#profile {
+  button {
+    height: 45px;
+    width: 45px;
+  }
+}
+#profileHead {
+  img {
+    @extend .posr;
+    @extend .transX;
+    @extend .w100;
+    @extend .bdrds50;
+  }
+  h1 {
+    @extend .tac;
+    @extend .mb400;
+  }
+  [ion-button] {
+    @extend .posa;
+    @extend .transY;
+    @extend .m0;
+    @extend .bdrds50;
+    @extend .bdc-white;
+    @extend .bw500;
+    @extend .border-solid;
+    @extend .bgc-red100;
+    &:first-of-type {
+      left: -22.5px;
+    }
+    &:last-of-type {
+      right: -22.5px;
+    }
+  }
+}
+
+#stats {
+  [statBar] {
+    @extend .bdrds2;
+    @extend .w100;
+    @extend .bgc-grey200;
+    height: 8px;
+    & > div {
+      @extend .bdrds2;
+      @extend .bgc-red100;
+      height: 8px;
+    }
+  }
+  p {
+    @extend .m0;
+    @extend .pb200;
+  }
+}
 
 }

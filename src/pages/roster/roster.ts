@@ -22,7 +22,7 @@ export class Roster {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private callNumber: CallNumber) {
+    public callNumber: CallNumber) {
   }
 
   ngOnInit(){
@@ -41,7 +41,7 @@ export class Roster {
     // this.navParams.set('id', id);
   }
 
-  callNumber(phone){
+  useTelephone(phone){
     let $phone = phone.replace(/[^0-9]/g, "");
     this.callNumber.callNumber($phone, true)
     .then(() => console.log('Launched dialer!'))

@@ -21,7 +21,7 @@
         <h1>{{player.name}}</h1>
       </div>
       <p>{{player.email}}</p>
-      <p>{{player.phone}}</p>
+      <p (click)="useTelephone(player.phone)">{{player.phone}}</p>
       <button
       ion-button
       (click)="showPlayerDetails(player)">

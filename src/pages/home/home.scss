@@ -1,3 +1,9 @@
 page-home {
-
+  button {
+    @extend .fl;
+    @extend .vh20;
+    @extend .bdrds4;
+    margin: 1rem;
+    width: calc((100%/2) - 2rem);
+  }
 }
