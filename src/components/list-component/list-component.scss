@@ -1,0 +1,12 @@
+list-component {
+  .list_label {
+    float: left;
+    text-align: left;
+  }
+  .edit_icon,
+  .delete_icon {
+  	float: right;
+    margin: 0 5px;
+    color: black;
+  }
+}

@@ -5,36 +5,73 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+
+// Firebase
+import { AngularFireModule } from 'angularfire2';
+
+// pages
+import { HomePage } from '../pages/home/home';
 import { Login } from '../pages/login/login';
+import { Register } from '../pages/register/register';
 import { Options } from '../pages/options/options';
 import { Profile } from '../pages/profile/profile';
 import { Roster } from '../pages/roster/roster';
 import { Schedule } from '../pages/schedule/schedule';
 import { Workouts } from '../pages/workouts/workouts';
+import { Drills } from '../pages/drills/drills';
+
+// components
+import { ListComponent } from '../components/list-component/list-component';
+import { TitleComponent } from '../components/title-component/title-component';
+
+
+
+// Firebase config settings
+export const firebaseConfig = {
+    apiKey: "AIzaSyCwXFVy3n5wUdOOX71g3LqlkkdN0tuthpc",
+    authDomain: "practice-app-79e8d.firebaseapp.com",
+    databaseURL: "https://practice-app-79e8d.firebaseio.com",
+    projectId: "practice-app-79e8d",
+    storageBucket: "practice-app-79e8d.appspot.com",
+    messagingSenderId: "495692730199"
+};
+
+
 
 @NgModule({
   declarations: [
     MyApp,
+    //pages
+    HomePage,
     Login,
+    Register,
     Options,
     Profile,
     Roster,
     Schedule,
-    Workouts
+    Workouts,
+    Drills,
+    //components
+    ListComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig) //initialize Firebase
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    HomePage,
     Login,
+    Register,
     Options,
     Profile,
     Roster,
     Schedule,
-    Workouts
+    Workouts,
+    Drills
   ],
   providers: [
     StatusBar,

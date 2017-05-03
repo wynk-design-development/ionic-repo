@@ -1,47 +1,87 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Profile } from '../profile/profile';
-import { Roster } from '../roster/roster';
-import { Schedule } from '../schedule/schedule';
-import { Workouts } from '../workouts/workouts';
+import { IonicPage, NavController, NavParams, AlertController,ActionSheetController } from 'ionic-angular';
 
-/**
- * Generated class for the Login page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+// Firebase
+import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
+
+// pages
+import { HomePage } from '../home/home';
+import { Register } from '../register/register';
+
+//components
+import { TitleComponent } from '../../components/title-component/title-component';
+
+
 @IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
-export class Login {
 
-  constructor(
+
+
+export class Login {
+  public pageTitle = 'Login';
+  public registerCredentials = {email: '', password: ''};
+
+  constructor (
     public navCtrl: NavController,
-    public navParams: NavParams) {
-  }
+    public navParams: NavParams,
+    private alertCtrl: AlertController,
+    public af: AngularFire
+  ) {
+    // check if user is logged in
+    this.af.auth.subscribe(auth => {
+      if ( auth ) {
+        console.log('auth - ',auth);
+        this.navCtrl.setRoot( HomePage );
+      }
+    })
+  } //constructor
+
+
+
+  public createAccount() {
+    this.navCtrl.push( Register );
+  } //createAccount
+
+
+
+  public login( formData ) {
+    if(formData.valid) {
+      this.af.auth.login({
+        email: formData.value.email,
+        password: formData.value.password
+      },
+      {
+        provider: AuthProviders.Password,
+        method: AuthMethods.Password,
+      }).then(
+      (success) => {
+        console.log(success);
+        this.navCtrl.setRoot(HomePage)
+      }).catch(
+        (err) => {
+        console.log(err);
+        this.showError(err);
+      })
+    }
+  } //login
+
+
+
+  public showError(text) {
+    let alert = this.alertCtrl.create({
+      title: 'Fail',
+      subTitle: text,
+      buttons: ['OK']
+    });
+    alert.present(prompt);
+  } //showError
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Login');
-  }
-
-  goTo(value){
-    switch(value){
-      case 'Roster':
-        this.navCtrl.push(Roster);
-      break;
-      case 'Schedule':
-        this.navCtrl.push(Schedule);
-      break;
-      case 'Workouts':
-        this.navCtrl.push(Workouts);
-      break;
-      case 'Profile':
-        this.navCtrl.push(Profile);
-      break;
-    }
-  }
-
+  } //ionViewDidLoad
 }
