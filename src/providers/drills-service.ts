@@ -14,5 +14,4 @@ export class DrillsService {
   constructor(public http: Http) {
     console.log('Hello DrillsService Provider');
   }
-
 }
