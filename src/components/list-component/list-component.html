@@ -1,7 +1,7 @@
 <ion-row>
   <ion-col col-12 col-md-8 offset-md-2>
-    <button col-3 ion-button block type="button" (click)="addDrill()">
-      <p>Add Drill</p>&nbsp;&nbsp;
+    <button col-3 ion-button block type="button" (click)="addItem()">
+      <p>Add</p>&nbsp;&nbsp;
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-col>
@@ -13,20 +13,20 @@
         show-delete="shouldShowDelete"
         show-reorder="shouldShowReorder">
         <ion-item
-            *ngFor="let drill of drills | async"
+            *ngFor="let item of list | async"
             class="item-thumbnail-right">
-            <p class="list_label">{{drill.title}}</p>
+            <p class="list_label">{{item.title}}</p>
             <ion-icon
                 class="delete_icon"
                 name="trash"
                 color="danger"
-                (click)="removeDrill(drill.$key)">
+                (click)="removeItem(item.$key)">
             </ion-icon>
             <ion-icon
                 class="edit_icon"
                 name="create"
                 color="primary"
-                (click)="updateDrill(drill.$key)">
+                (click)="editItem(item.$key)">
             </ion-icon>
         </ion-item>
     </ion-list>

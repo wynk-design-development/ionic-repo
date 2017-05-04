@@ -1,5 +1,10 @@
 <title-component [pageTitle]="pageTitle"></title-component>
 
 <ion-content class="drills_content" padding>
-	<list-component></list-component>
+	<list-component
+		(add)="addDrill($event)"
+		(edit)="editDrill($event)"
+		(remove)="removeDrill($event)"
+		[list]="drills">
+	</list-component>
 </ion-content>
