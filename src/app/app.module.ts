@@ -1,10 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+
+// angular modules
+import { CalendarModule } from 'angular-calendar';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Firebase
 import { AngularFireModule } from 'angularfire2';
@@ -23,6 +28,7 @@ import { Drills } from '../pages/drills/drills';
 // components
 import { ListComponent } from '../components/list-component/list-component';
 import { TitleComponent } from '../components/title-component/title-component';
+import { CalendarComponent } from '../components/calendar-component/calendar-component';
 
 
 
@@ -53,11 +59,16 @@ export const firebaseConfig = {
     Drills,
     //components
     ListComponent,
-    TitleComponent
+    TitleComponent,
+    CalendarComponent
+    //ionic components
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     IonicModule.forRoot(MyApp),
+    CalendarModule.forRoot(),
+    NgbModalModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig) //initialize Firebase
   ],
   bootstrap: [IonicApp],

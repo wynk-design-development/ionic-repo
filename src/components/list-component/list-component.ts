@@ -1,8 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { IonicPage, AlertController, ActionSheetController } from 'ionic-angular';
-
-// Firebase
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 
 
@@ -20,8 +16,6 @@ export class ListComponent {
     @Input() list:Array<any>;
 
     constructor() {}
-
-
 
     public addItem(item) {
       this.add.emit(item);
