@@ -31,6 +31,7 @@ export class Drills {
       if ( auth ) {
         this.uid = auth.uid;
         this.drills = af.database.list(this.uid+'/drills/');
+        console.log('drills - ',this.drills);
       }
     });
   } //constructor
