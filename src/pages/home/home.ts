@@ -12,9 +12,6 @@ import { Workouts } from '../workouts/workouts';
 import { Profile } from '../profile/profile';
 import { Drills } from '../drills/drills';
 
-//components
-import { TitleComponent } from '../../components/title-component/title-component';
-
 
 
 @Component({

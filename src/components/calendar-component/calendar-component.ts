@@ -1,4 +1,11 @@
-import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit, OnDestroy } from '@angular/core';
+import { AlertController } from 'ionic-angular';
+import { Subscription } from 'rxjs/Subscription';
+
+// Firebase
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
+//calendar components
 import {
   startOfDay,
   endOfDay,
@@ -32,111 +39,147 @@ const colors: any = {
   }
 };
 
+
+
 @Component({
   selector: 'calendar-component',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: 'calendar-component.html'
 })
-export class CalendarComponent {
 
-  @ViewChild('modalContent') modalContent: TemplateRef<any>;
 
+
+export class CalendarComponent implements OnInit, OnDestroy {
+  schedule: FirebaseListObservable<any>;
+  scheduleSubscription: Subscription;
+  uid: string;
   view: string = 'month';
-
   viewDate: Date = new Date();
-
+  events: CalendarEvent[] = [];
+  refresh: Subject<any> = new Subject();
+  activeDayIsOpen: boolean = true;
   modalData: {
     action: string,
     event: CalendarEvent
   };
+  @ViewChild('modalContent') modalContent: TemplateRef<any>;
+  // actions: CalendarEventAction[] = [{
+  //   label: '<i class="fa fa-fw fa-pencil"></i>',
+  //   onClick: ({event}: { event: CalendarEvent }): void => {
+  //     this.handleEvent('Edited', event);
+  //   }
+  // }, {
+  //     label: '<i class="fa fa-fw fa-times"></i>',
+  //     onClick: ({event}: { event: CalendarEvent }): void => {
+  //       this.events = this.events.filter(iEvent => iEvent !== event);
+  //       this.handleEvent('Deleted', event);
+  //     }
+  //   }];
 
-  actions: CalendarEventAction[] = [{
-    label: '<i class="fa fa-fw fa-pencil"></i>',
-    onClick: ({event}: {event: CalendarEvent}): void => {
-      this.handleEvent('Edited', event);
+
+
+    constructor(
+        private modal: NgbModal,
+        public af: AngularFire,
+        public alertCtrl: AlertController
+    ) {
+        this.af.auth.subscribe(auth => {
+          if (auth) {
+            this.uid = auth.uid;
+            this.schedule = af.database.list(this.uid + '/schedule/');
+          }
+        });
+    } //constructor
+
+    ngOnInit() {
+        console.log('---ngOnInit---');
+        this.getEvents();
+    } //ngOnInit
+
+    ngOnDestroy() {
+        if ( this.scheduleSubscription ) { this.scheduleSubscription.unsubscribe() }
+    } //ngOnDestroy
+
+    getEvents() {
+        console.log('---getEvents---');
+        this.scheduleSubscription = this.schedule.subscribe(
+            res => {
+                console.log('SUCCESSFUL GETTING EVENTS - ',res);
+                for ( let i=0; i < res.length; i++ ) {
+                    let eventInfo = {
+                        start: new Date(res[i].startDate),
+                        title: res[i].title,
+                        color: colors.red
+                    }
+                    this.events.push(eventInfo);
+                    this.refresh.next();
+                }
+          },
+          err => {
+              console.log('ERROR GETTING EVENTS - ',err);
+          }
+        )
+    } //getEvents
+
+    dayClicked({date, events}: { date: Date, events: CalendarEvent[] }): void {
+        if (isSameMonth(date, this.viewDate)) {
+            if (
+                (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
+                events.length === 0
+            ) {
+                this.activeDayIsOpen = false;
+            } else {
+                this.activeDayIsOpen = true;
+                this.viewDate = date;
+            }
+        }
+    } //dayClicked
+
+    eventTimesChanged({event, newStart, newEnd}: CalendarEventTimesChangedEvent): void {
+        event.start = newStart;
+        event.end = newEnd;
+        this.handleEvent('Dropped or resized', event);
+        this.refresh.next();
+    } //eventTimesChanged
+
+    handleEvent(action: string, event: CalendarEvent): void {
+        this.modalData = { event, action };
+        this.modal.open(this.modalContent, { size: 'lg' });
+    } //handleEvent
+
+    addEvent(): void {
+        let prompt = this.alertCtrl.create({
+            title: 'Event Name',
+            message: "Enter event",
+            inputs: [
+                {
+                    name: 'title',
+                    placeholder: 'Title'
+                },
+                {
+                    name: 'startDate',
+                    placeholder: 'Start Date',
+                    type: 'date'
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Cancel',
+                    handler: data => {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Save',
+                    handler: data => {
+                        this.schedule.push({
+                            title: data.title,
+                            startDate: data.startDate
+                        });
+                    }
+                }
+            ]
+        });
+        prompt.present();
     }
-  }, {
-    label: '<i class="fa fa-fw fa-times"></i>',
-    onClick: ({event}: {event: CalendarEvent}): void => {
-      this.events = this.events.filter(iEvent => iEvent !== event);
-      this.handleEvent('Deleted', event);
-    }
-  }];
-
-  refresh: Subject<any> = new Subject();
-
-  events: CalendarEvent[] = [{
-    start: subDays(startOfDay(new Date()), 1),
-    end: addDays(new Date(), 1),
-    title: 'A 3 day event',
-    color: colors.red,
-    actions: this.actions
-  }, {
-    start: startOfDay(new Date()),
-    title: 'An event with no end date',
-    color: colors.yellow,
-    actions: this.actions
-  }, {
-    start: subDays(endOfMonth(new Date()), 3),
-    end: addDays(endOfMonth(new Date()), 3),
-    title: 'A long event that spans 2 months',
-    color: colors.blue
-  }, {
-    start: addHours(startOfDay(new Date()), 2),
-    end: new Date(),
-    title: 'A draggable and resizable event',
-    color: colors.yellow,
-    actions: this.actions,
-    resizable: {
-      beforeStart: true,
-      afterEnd: true
-    },
-    draggable: true
-  }];
-
-  activeDayIsOpen: boolean = true;
-
-  constructor(private modal: NgbModal) {}
-
-  dayClicked({date, events}: {date: Date, events: CalendarEvent[]}): void {
-
-    if (isSameMonth(date, this.viewDate)) {
-      if (
-        (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
-        events.length === 0
-      ) {
-        this.activeDayIsOpen = false;
-      } else {
-        this.activeDayIsOpen = true;
-        this.viewDate = date;
-      }
-    }
-  }
-
-  eventTimesChanged({event, newStart, newEnd}: CalendarEventTimesChangedEvent): void {
-    event.start = newStart;
-    event.end = newEnd;
-    this.handleEvent('Dropped or resized', event);
-    this.refresh.next();
-  }
-
-  handleEvent(action: string, event: CalendarEvent): void {
-    this.modalData = {event, action};
-    this.modal.open(this.modalContent, {size: 'lg'});
-  }
-
-  addEvent(): void {
-    this.events.push({
-      title: 'New event',
-      start: startOfDay(new Date()),
-      end: endOfDay(new Date()),
-      color: colors.red,
-      draggable: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      }
-    });
-    this.refresh.next();
-  }
 }

@@ -298,6 +298,9 @@ calendar-component {
         text-overflow: ellipsis;
         white-space: nowrap;
       }
+    } //END WEEK VIEW
+    ion-icon {
+        font-size: 3rem;
+        vertical-align: middle;
     }
-    //END WEEK VIEW
 }

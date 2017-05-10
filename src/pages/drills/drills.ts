@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
-//Components
-import { ListComponent } from '../components/login.component';
-
 // Firebase
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
@@ -93,11 +90,11 @@ export class Drills {
           placeholder: 'Title',
         },
         {
-          type: 'type',
+          name: 'type',
           placeholder: 'Type'
         },
         {
-          type: 'link',
+          name: 'link',
           placeholder: 'Link'
         }
       ],
@@ -114,8 +111,8 @@ export class Drills {
             console.log('data - ',data);
             this.drills.push({
               title: data.title,
-              type: data[1],
-              link: data[2]
+              type: data.type,
+              link: data.link
             });
           }
         }

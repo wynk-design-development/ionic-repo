@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController,ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 // Firebase
-import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 
 // pages
 import { HomePage } from '../home/home';
 import { Register } from '../register/register';
-
-//components
-import { TitleComponent } from '../../components/title-component/title-component';
 
 
 @IonicPage()

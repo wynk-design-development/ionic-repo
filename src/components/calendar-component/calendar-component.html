@@ -24,27 +24,27 @@
     </ion-col>
 </ion-row>
 
-<ion-row align-items-center>
-    <ion-col col-12 col-md-8 offset-md-2 text-center>
-        <button ion-button small mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate">
-            Previous
-        </button>
+<ion-row align-items-center col-12 col-md-8 offset-md-2 text-center>
+    <ion-col col-4 align="right" class="v-center">
+        <ion-icon mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" class="ion-ios-arrow-dropleft"></ion-icon>
+    </ion-col>
+    <ion-col col-4 class="v-center">
         <button ion-button small color="light" mwlCalendarToday [(viewDate)]="viewDate">
             Today
         </button>
-        <button ion-button small mwlCalendarNextView [view]="view" [(viewDate)]="viewDate">
-            Next
-        </button>
+    </ion-col>
+    <ion-col align="left" col-4 class="v-center">
+        <ion-icon mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" class="ion-ios-arrow-dropright"></ion-icon>
     </ion-col>
 </ion-row>
 
-<ion-row align-items-center>
+<!-- <ion-row align-items-center>
     <ion-col col-12 col-md-8 offset-md-2 text-center>
         <button ion-button small (click)="view = 'month'" [class.active]="view === 'month'">Month</button>
         <button ion-button small (click)="view = 'week'" [class.active]="view === 'week'">Week</button>
         <button ion-button small (click)="view = 'day'" [class.active]="view === 'day'">Day</button>
     </ion-col>
-</ion-row>
+</ion-row> -->
 
 <ion-row>
     <ion-col col-12 col-md-8 offset-md-2>
