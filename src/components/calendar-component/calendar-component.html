@@ -49,7 +49,7 @@
 <ion-row>
     <ion-col col-12 col-md-8 offset-md-2>
         <div [ngSwitch]="view">
-          <mwl-calendar-month-view
+          <mwl-calendar-month-view-component
             *ngSwitchCase="'month'"
             [viewDate]="viewDate"
             [events]="events"
@@ -58,7 +58,7 @@
             (dayClicked)="dayClicked($event.day)"
             (eventClicked)="handleEvent('Clicked', $event.event)"
             (eventTimesChanged)="eventTimesChanged($event)">
-          </mwl-calendar-month-view>
+          </mwl-calendar-month-view-component>
           <mwl-calendar-week-view
             *ngSwitchCase="'week'"
             [viewDate]="viewDate"

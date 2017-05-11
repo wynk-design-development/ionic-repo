@@ -29,6 +29,7 @@ import { Drills } from '../pages/drills/drills';
 import { ListComponent } from '../components/list-component/list-component';
 import { TitleComponent } from '../components/title-component/title-component';
 import { CalendarComponent } from '../components/calendar-component/calendar-component';
+import { CalendarMonthViewComponent } from '../components/calendar-month-view/calendar-month-view';
 
 
 
@@ -60,7 +61,8 @@ export const firebaseConfig = {
     //components
     ListComponent,
     TitleComponent,
-    CalendarComponent
+    CalendarComponent,
+    CalendarMonthViewComponent
     //ionic components
   ],
   imports: [

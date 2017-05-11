@@ -92,7 +92,6 @@ export class CalendarComponent implements OnInit, OnDestroy {
     } //constructor
 
     ngOnInit() {
-        console.log('---ngOnInit---');
         this.getEvents();
     } //ngOnInit
 
