@@ -8,7 +8,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 
 // angular modules
-import { CalendarModule } from 'angular-calendar';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Firebase
@@ -28,8 +27,9 @@ import { Drills } from '../pages/drills/drills';
 // components
 import { ListComponent } from '../components/list-component/list-component';
 import { TitleComponent } from '../components/title-component/title-component';
-import { CalendarComponent } from '../components/calendar-component/calendar-component';
-import { CalendarMonthViewComponent } from '../components/calendar-month-view/calendar-month-view';
+
+// calendar
+import { CalendarComponent } from "angular2-fullcalendar/src/calendar/calendar";
 
 
 
@@ -61,15 +61,13 @@ export const firebaseConfig = {
     //components
     ListComponent,
     TitleComponent,
-    CalendarComponent,
-    CalendarMonthViewComponent
+    CalendarComponent
     //ionic components
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     IonicModule.forRoot(MyApp),
-    CalendarModule.forRoot(),
     NgbModalModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig) //initialize Firebase
   ],
