@@ -29,6 +29,7 @@ import { ListComponent } from '../components/list-component/list-component';
 import { TitleComponent } from '../components/title-component/title-component';
 
 // calendar
+import { FullCalendarComponent } from '../components/full-calendar/full-calendar';
 import { CalendarComponent } from "angular2-fullcalendar/src/calendar/calendar";
 
 
@@ -61,6 +62,7 @@ export const firebaseConfig = {
     //components
     ListComponent,
     TitleComponent,
+    FullCalendarComponent,
     CalendarComponent
     //ionic components
   ],
