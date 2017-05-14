@@ -1,6 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-
-import { CalendarComponent } from "angular2-fullcalendar/src/calendar/calendar";
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { AlertController } from 'ionic-angular';
 
 
 
@@ -11,9 +10,19 @@ import { CalendarComponent } from "angular2-fullcalendar/src/calendar/calendar";
 
 
 
-export class FullCalendarComponent{
+export class FullCalendarComponent implements OnInit {
+
+	constructor(
+	public alertCtrl: AlertController
+	) {} //constructor
+
+
+
+    ngOnInit() {}
+
+
+
     calendarOptions:Object = {
-        height: 'parent',
         fixedWeekCount : false,
         defaultDate: '2016-09-12',
         editable: true,
@@ -75,4 +84,43 @@ export class FullCalendarComponent{
           }
         ]
       };
+
+
+
+      addEvent(): void {
+      	console.log('---addEvent---');
+			let prompt = this.alertCtrl.create({
+			title: 'Event Name',
+			message: "Fill out event info",
+			inputs: [
+				{
+					name: 'title',
+					placeholder: 'Title',
+				},
+				{
+					name: 'startDate',
+					placeholder: 'Start',
+				},
+				{
+					name: 'endDate',
+					placeholder: 'end'
+				}
+			],
+			buttons: [
+				{
+					text: 'Cancel',
+					handler: data => {
+						console.log('Cancel clicked');
+					}
+				},
+				{
+					text: 'Save',
+					handler: data => {
+						console.log('data - ',data);
+					}
+				}
+			]
+			});
+			prompt.present();
+      } //addEvent
 }
