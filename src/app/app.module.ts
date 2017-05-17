@@ -27,10 +27,10 @@ import { Drills } from '../pages/drills/drills';
 // components
 import { ListComponent } from '../components/list-component/list-component';
 import { TitleComponent } from '../components/title-component/title-component';
+import { CalendarComponent } from '../components/calendar-component/calendar-component';
 
 // calendar
-import { FullCalendarComponent } from '../components/full-calendar/full-calendar';
-import { CalendarComponent } from "angular2-fullcalendar/src/calendar/calendar";
+import { CalendarModule } from 'angular-calendar';
 
 
 
@@ -62,7 +62,6 @@ export const firebaseConfig = {
     //components
     ListComponent,
     TitleComponent,
-    FullCalendarComponent,
     CalendarComponent
     //ionic components
   ],
@@ -71,6 +70,7 @@ export const firebaseConfig = {
     BrowserAnimationsModule,
     IonicModule.forRoot(MyApp),
     NgbModalModule.forRoot(),
+    CalendarModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig) //initialize Firebase
   ],
   bootstrap: [IonicApp],

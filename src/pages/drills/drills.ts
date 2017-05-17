@@ -83,7 +83,7 @@ export class Drills {
   public addDrill() {
     let prompt = this.alertCtrl.create({
       title: 'Drill Name',
-      message: "Enter a name for this new song you're so keen on adding",
+      message: "Enter a name for this new drill",
       inputs: [
         {
           name: 'title',
