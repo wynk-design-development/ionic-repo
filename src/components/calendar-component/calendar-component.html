@@ -20,26 +20,27 @@
   </div>
 </ng-template> -->
 
-	<div>
+	<ion-row align-items-center>
+		<ion-col align-self-center>
+			<ion-icon name="ios-arrow-dropleft-outline" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"></ion-icon>
+			<button ion-button color="light" mwlCalendarToday [(viewDate)]="viewDate">
+			{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}
+			</button>
+			<ion-icon name="ios-arrow-dropright-outline" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"></ion-icon>
+		</ion-col>
 
-		<ion-icon name="ios-arrow-dropleft-outline" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"></ion-icon>
-		<button ion-button color="light" mwlCalendarToday [(viewDate)]="viewDate">
-			Today
-		</button>
-		<ion-icon name="ios-arrow-dropright-outline" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"></ion-icon>
-
-		<h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
-
-		<button ion-button small color="light" (click)="view = 'month'" [class.active]="view === 'month'">
+		<ion-col col-2>
+			<button ion-button small color="light" (click)="view = 'month'" [class.active]="view === 'month'">
 			Month
-		</button>
-		<button ion-button small color="light" (click)="view = 'week'" [class.active]="view === 'week'">
+			</button>
+			<button ion-button small color="light" (click)="view = 'week'" [class.active]="view === 'week'">
 			Week
-		</button>
-		<button ion-button small color="light" (click)="view = 'day'" [class.active]="view === 'day'">
+			</button>
+			<button ion-button small color="light" (click)="view = 'day'" [class.active]="view === 'day'">
 			Day
-		</button>
-	</div>
+			</button>
+		</ion-col>
+	</ion-row>
 
 	<div [ngSwitch]="view">
 	  <mwl-calendar-month-view
