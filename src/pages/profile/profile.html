@@ -35,8 +35,8 @@
         <ion-icon name="mail"></ion-icon>
       </button>
     </div>
-    <h1>{{player.name}}</h1>
-    <div id="stats">
+    <h1 class="db tac">{{player.name}}</h1>
+    <div id="stats" class="ptb600">
       <div *ngFor="let stat of player.stats; let $i = index" class="clearfix">
         <div statBar class="db">
           <div [ngStyle]="{'width': stat.percentage + '%'}"></div>
@@ -45,10 +45,13 @@
         <p class="fr">{{stat.percentage}}%</p>
       </div>
     </div>
-    <p>{{player.about}}</p>
-    <div id="badges" class="clearfix col-md-12 ptb400 col-md-push-1 posr">
-      <h2>Player Awards</h2>
-      <div class="fl db w20 posr" *ngFor="let badge of player.badges">
+    <div class="row">
+      <h2>About</h2>
+      <p>{{player.about}}</p>
+    </div>
+    <h2>Player Awards</h2>
+    <div id="badges" class="clearfix col-md-14 ptb400 posr row">
+      <div class="fl db w20 posr pr100" *ngFor="let badge of player.badges">
         <button
           ion-button
           round

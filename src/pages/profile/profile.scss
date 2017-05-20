@@ -52,4 +52,10 @@ page-profile {
   }
 }
 
+#badges {
+  button {
+    @extend .bgc-red100;
+  }
+}
+
 }

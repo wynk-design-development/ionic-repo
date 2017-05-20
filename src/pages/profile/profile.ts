@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 import * as roster from '../../assets/roster.json';
 import { CallNumber } from '@ionic-native/call-number';
@@ -24,12 +24,14 @@ export class Profile {
     public navCtrl: NavController,
     public navParams: NavParams,
     public callNumber: CallNumber,
-    public emailComposer: EmailComposer) {
+    public emailComposer: EmailComposer,
+    public alertController: AlertController) {
   }
 
   ngOnInit(){
     console.log(this.navParams.get('playerId'));
     this.player = this.navParams.get('playerId');
+    console.log(this.player);
   }
 
   ionViewDidLoad() {
@@ -70,6 +72,15 @@ export class Profile {
     }).catch(error => {
       console.log(error);
     });
+  }
+
+  showBadgeDetails(type){
+    let alert = this.alertController.create({
+      title: `${type} award`,
+      subTitle: `${this.player['name']} won the ${type} award.`,
+      buttons: ['Dismiss']
+    });
+    alert.present()
   }
 
 }

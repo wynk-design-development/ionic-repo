@@ -7,26 +7,38 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>roster</ion-title>
+    <ion-title>{{teamName}} Roster</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let player of players">
-      <div class="profileBasics">
-        <img [src]="player.picture" alt="">
-        <h1>{{player.name}}</h1>
-      </div>
-      <p>{{player.email}}</p>
-      <p (click)="useTelephone(player.phone)">{{player.phone}}</p>
-      <button
+  <div>
+    <button
+      *ngFor="let position of positions"
       ion-button
-      (click)="showPlayerDetails(player)">
-        View Details
-      </button>
+      (click)="filterPositions(position)">
+      {{position}}
+    </button>
+  </div>
+  <ion-list class="clearfix" id="RosterList">
+    <ion-item *ngFor="let player of players" (click)="showPlayerDetails(player)" [ngClass]="{'active': position === player.position || position === 'all'}">
+      <div *ngIf="position === player.position || position === 'all'">
+        <div class="fl w20 db bdrds50 pl100">
+          <img [src]="player.picture" alt="">
+        </div>
+        <div class="w80 fl pad100">
+          <h2 class="pb100">{{player.name}}</h2>
+          <div class="w100 clearfix">
+            <span class="fl db color-grey400 text200 fw400">{{player.position}}</span>
+            <span class="color-red400 fw400 text200 fr db">rank | {{player.rank}}</span>
+          </div>
+        </div>
+        <button
+        ion-button>
+          View Details
+        </button>
+      </div>
     </ion-item>
   </ion-list>
 </ion-content>
