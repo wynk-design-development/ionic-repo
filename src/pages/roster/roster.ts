@@ -4,6 +4,7 @@ import { Login } from '../login/login';
 import { AddPlayer } from '../add-player/add-player';
 import * as roster from '../../assets/roster.json';
 import { Profile } from '../profile/profile';
+<<<<<<< HEAD
 import { CallNumber } from '@ionic-native/call-number';
 
 // Components
