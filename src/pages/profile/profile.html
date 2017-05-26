@@ -17,7 +17,8 @@
 
   <div id="profile">
     <div id="profileHead" class="w50 transX posr">
-      <img [src]="player.picture" alt="">
+      <img *ngIf="player.picture" [src]="player.picture" alt="">
+      <img *ngIf="!player.picture" src="http://lorempixel.com/128/128/people/" [alt]="">
       <button
         ion-button
         icon-only
@@ -46,7 +47,7 @@
       </div>
     </div>
     <div class="row">
-      <h2>About</h2>
+      <h2 class="w100">About</h2>
       <p>{{player.about}}</p>
     </div>
     <h2>Player Awards</h2>

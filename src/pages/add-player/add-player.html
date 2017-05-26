@@ -1,0 +1,74 @@
+<title-component [pageTitle]="pageTitle"></title-component>
+
+
+<ion-content padding>
+
+  <form [formGroup]="addPlayer">
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Name</ion-label>
+      <ion-input type="text" formControlName="name">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Position</ion-label>
+      <ion-select formControlName="position">
+        <ion-option *ngFor="let position of positions">
+          {{position}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input type="email" formControlName="email">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Phone</ion-label>
+      <ion-input type="tel" maxlength="10" formControlName="phone">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Address</ion-label>
+      <ion-input type="text" formControlName="address">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>About</ion-label>
+      <ion-textarea placeholder="Enter a description" formControlName="about"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Birthday</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="today" formControlName="birthdate"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+    <button
+      ion-button
+      danger
+      (click)="navCtrl.pop()">
+      Cancel
+    </button>
+    <button
+      ion-button
+      primary
+      (click)="saveNewPlayer(addPlayer.value);">
+      Save
+    </button>
+    </ion-item>
+
+  </ion-list>
+
+
+
+  </form>
+
+</ion-content>

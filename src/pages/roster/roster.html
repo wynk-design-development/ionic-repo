@@ -1,16 +1,4 @@
-<!--
-  Generated template for the Roster page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>{{teamName}} Roster</ion-title>
-  </ion-navbar>
-
-</ion-header>
+<title-component [pageTitle]="pageTitle"></title-component>
 
 <ion-content padding>
   <div>
@@ -21,6 +9,40 @@
       {{position}}
     </button>
   </div>
+
+  <!-- <list-component
+		[list]="players">
+	</list-component> -->
+  <ion-item
+      *ngFor="let player of roster | async"
+      class="item-thumbnail-right"
+      (click)="showPlayerDetails(player)"
+      [ngClass]="{'active': position === player.position || position === 'all'}">
+      <!-- <div class="fl w20 db bdrds50 pl100">
+        <img *ngIf="player.image" [src]="player.image" [alt]="">
+        <img *ngIf="!player.image" src="http://lorempixel.com/128/128/people/" [alt]="">
+      </div>
+      <!-- <p>{{JSON.stringify(item)}}</p>
+      <p class="list_label">{{player?.name}}</p> -->
+      <div *ngIf="position === player.position || position === 'all'">
+        <div class="fl w20 db bdrds50 pl100">
+          <img *ngIf="player.picture" [src]="player.image" [alt]="">
+          <img *ngIf="!player.picture" src="http://lorempixel.com/128/128/people/" [alt]="">
+        </div>
+        <div class="w80 fl pad100">
+          <h2 class="pb100">{{player.name}}</h2>
+          <div class="w100 clearfix">
+            <span class="fl db color-grey400 text200 fw400">{{player.position}}</span>
+            <span class="color-red400 fw400 text200 fr db">rank | {{player.rank}}</span>
+          </div>
+        </div>
+        <button
+        ion-button>
+          View Details
+        </button>
+      </div>
+  </ion-item>
+
   <ion-list class="clearfix" id="RosterList">
     <ion-item *ngFor="let player of players" (click)="showPlayerDetails(player)" [ngClass]="{'active': position === player.position || position === 'all'}">
       <div *ngIf="position === player.position || position === 'all'">
@@ -41,4 +63,11 @@
       </div>
     </ion-item>
   </ion-list>
+  <button
+    ion-button
+    block
+    primary
+    (click)="addNewPlayer();">
+    Add New Player
+  </button>
 </ion-content>
